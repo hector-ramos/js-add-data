@@ -5,12 +5,12 @@ var person = [
         ammount: 20.01
     }, {
         name: 'Amie',
-        tel: '671-787-7262',
-        ammount: 20.01
+        tel: '671-686-1563',
+        ammount: 12.33
     }, {
         name: 'Angelo',
-        tel: '671-787-7262',
-        ammount: 20.01
+        tel: '671-689-1088',
+        ammount: 0
     }
 ];
 
@@ -61,7 +61,7 @@ for ( var i = 0; i < person.length; i++ ) {
     var td3 = document.createElement( 'td' );
     td1.textContent = person[i].name;
     td2.textContent = person[i].tel;
-    td3.textContent = person[i].ammount;
+    td3.textContent = '$' + ' ' + person[i].ammount;
 
     // console.log( td1.textContent );
     // console.log( td2.textContent );
