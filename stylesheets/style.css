@@ -11,8 +11,8 @@
   border: 1px solid #fff;
   padding: 10px;
 }
-/* line 13, ../sass/style.sass */
-.data-table td {
+/* line 14, ../sass/style.sass */
+.data-table .t-body td {
   background-color: #fefefe;
   border-bottom: 1px solid #eceded;
   border-right: 1px solid #e6e6e6;

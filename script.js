@@ -1,3 +1,4 @@
+//store data
 var person = [
     {
         name: 'Annie',
@@ -14,6 +15,7 @@ var person = [
     }
 ];
 
+//declare variables and create table ::start
 var div   = document.createElement( 'div' ),
     p     = document.createElement( 'p' ),
     table = document.createElement( 'table' ),
@@ -45,15 +47,9 @@ table.appendChild( tbody );
 div.appendChild( table );
 div.appendChild( p );
 document.body.insertBefore(div, document.body.firstChild);
+//declare variables and create table ::end
 
-
-// p.addEventListener('click', function(e){
-//     var target = e.target;
-//     if (target.nodeName.toLowerCase() === 'p'){
-//         form.removeClass('.hide');
-//     }
-// });
-
+//to iterate the stored data in array
 for ( var i = 0; i < person.length; i++ ) {
     var tr = document.createElement( 'tr' );
     var td1 = document.createElement( 'td' );
@@ -63,10 +59,6 @@ for ( var i = 0; i < person.length; i++ ) {
     td2.textContent = person[i].tel;
     td3.textContent = '$' + ' ' + person[i].ammount;
 
-    // console.log( td1.textContent );
-    // console.log( td2.textContent );
-    // console.log( td3.textContent );
-
     tr.appendChild( td1 );
     tr.appendChild( td2 );
     tr.appendChild( td3 );
@@ -74,4 +66,30 @@ for ( var i = 0; i < person.length; i++ ) {
     tbody.appendChild( tr );
 }
 
-console.log( form );
+
+// document.getElementsByTagName('div')
+var form = document.querySelector('#add-form');
+
+// console.log(form['number-input']);
+
+//event lister | 
+form.addEventListener('submit', function(e){
+    var tr = document.createElement( 'tr' );
+    var td1 = document.createElement( 'td' );
+    var td2 = document.createElement( 'td' );
+    var td3 = document.createElement( 'td' );
+    td1.textContent = form['name-input'].value;
+    td2.textContent = form['number-input'].value;
+    td3.textContent = '$' + ' ' + form['ammount-input'].value;
+
+    tr.appendChild( td1 );
+    tr.appendChild( td2 );
+    tr.appendChild( td3 );
+
+    tbody.appendChild( tr );
+
+    form.reset();
+
+    e.preventDefault();
+
+}, false);
