@@ -26,11 +26,12 @@
   background-color: #fefefe;
   border-bottom: 1px solid #eceded;
   border-right: 1px solid #e6e6e6;
+  border-left: 1px solid #e6e6e6;
   border-top: 1px solid transparent;
   padding: 10px;
 }
 
-/* line 33, ../sass/style.sass */
+/* line 34, ../sass/style.sass */
 .add-btn {
   display: block;
   padding: 10px;
@@ -41,17 +42,17 @@
   color: #fff;
   font-size: 1.4em;
 }
-/* line 43, ../sass/style.sass */
+/* line 44, ../sass/style.sass */
 .add-btn:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
   opacity: 0.8;
 }
 
-/* line 46, ../sass/style.sass */
+/* line 47, ../sass/style.sass */
 .submit-btn {
   position: relative;
   vertical-align: top;
-  width: 200px;
+  width: 150px;
   padding: 10px;
   font-size: 1.2em;
   color: white;
@@ -65,8 +66,28 @@
   -webkit-border-radius: 25px;
   border-radius: 25px;
 }
-/* line 62, ../sass/style.sass */
+/* line 63, ../sass/style.sass */
 .submit-btn:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
   opacity: 0.8;
+}
+
+/* line 69, ../sass/style.sass */
+label {
+  display: block;
+  font-size: 2em;
+  color: #B4AB8C;
+}
+
+/* line 74, ../sass/style.sass */
+input {
+  display: block;
+  font-size: 1.6em;
+  border: 1px solid #dedede;
+  padding: 10px;
+}
+
+/* line 80, ../sass/style.sass */
+.element-wrapper {
+  padding: 10px 0;
 }
