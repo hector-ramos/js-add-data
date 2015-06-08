@@ -17,7 +17,7 @@ var person = [
 
 //declare variables and create table ::start
 var div   = document.createElement( 'div' ),
-    p     = document.createElement( 'p' ),
+    a     = document.createElement( 'a' ),
     table = document.createElement( 'table' ),
     thead = document.createElement( 'thead' ),
     tbody = document.createElement( 'tbody' ),
@@ -31,7 +31,9 @@ var div   = document.createElement( 'div' ),
 th1.textContent = 'Name';
 th2.textContent = 'Contact Number';
 th3.textContent = 'Ammount';
-p.textContent = 'Add'
+a.textContent = 'Add New Data';
+a.href = '#';
+a.className = 'add-btn';
 div.className = 'data-wrapper';
 table.className = 'data-table';
 thead.className = 't-head';
@@ -45,7 +47,7 @@ thead.appendChild( tr );
 table.appendChild( thead );
 table.appendChild( tbody );
 div.appendChild( table );
-div.appendChild( p );
+div.appendChild( a );
 document.body.insertBefore(div, document.body.firstChild);
 //declare variables and create table ::end
 
@@ -70,7 +72,7 @@ for ( var i = 0; i < person.length; i++ ) {
 // document.getElementsByTagName('div')
 var form = document.querySelector('#add-form');
 
-// console.log(form['number-input']);
+form.style.display = 'none';
 
 //event lister | 
 form.addEventListener('submit', function(e){
@@ -92,4 +94,10 @@ form.addEventListener('submit', function(e){
 
     e.preventDefault();
 
+}, false);
+
+a.addEventListener('click', function(e){
+    form.style.display = 'block';
+
+    e.preventDefault();
 }, false);

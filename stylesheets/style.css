@@ -1,21 +1,72 @@
-/* line 1, ../sass/style.sass */
+/* line 4, ../sass/style.sass */
+.data-wrapper,
+.data-form {
+  position: relative;
+  width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* line 11, ../sass/style.sass */
 .data-table {
+  width: 100%;
   font-size: 1.2em;
   margin: 5px 0 10px;
   padding: 0;
 }
-/* line 7, ../sass/style.sass */
+/* line 18, ../sass/style.sass */
 .data-table .t-head th {
   background-color: #b4ab8c;
   color: #fff;
   border: 1px solid #fff;
   padding: 10px;
 }
-/* line 14, ../sass/style.sass */
+/* line 25, ../sass/style.sass */
 .data-table .t-body td {
   background-color: #fefefe;
   border-bottom: 1px solid #eceded;
   border-right: 1px solid #e6e6e6;
   border-top: 1px solid transparent;
   padding: 10px;
+}
+
+/* line 33, ../sass/style.sass */
+.add-btn {
+  display: block;
+  padding: 10px;
+  width: 200px;
+  text-align: center;
+  text-decoration: none;
+  background: #B4AB8C;
+  color: #fff;
+  font-size: 1.4em;
+}
+/* line 43, ../sass/style.sass */
+.add-btn:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8;
+}
+
+/* line 46, ../sass/style.sass */
+.submit-btn {
+  position: relative;
+  vertical-align: top;
+  width: 200px;
+  padding: 10px;
+  font-size: 1.2em;
+  color: white;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  background: #B4AB8C;
+  border: 0;
+  cursor: pointer;
+  margin-top: 10px;
+  -moz-border-radius: 25px;
+  -webkit-border-radius: 25px;
+  border-radius: 25px;
+}
+/* line 62, ../sass/style.sass */
+.submit-btn:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8;
 }
