@@ -57,6 +57,8 @@ for ( var i = 0; i < person.length; i++ ) {
     var td1 = document.createElement( 'td' );
     var td2 = document.createElement( 'td' );
     var td3 = document.createElement( 'td' );
+    tr.draggable = true;
+    tr.className = 'draggable-item';
     td1.textContent = person[i].name;
     td2.textContent = person[i].tel;
     td3.textContent = '$' + ' ' + person[i].ammount;
@@ -71,7 +73,7 @@ for ( var i = 0; i < person.length; i++ ) {
 
 // document.getElementsByTagName('div')
 var form = document.querySelector('#add-form');
-
+var dataTable = document.querySelector('.data-table');
 form.style.display = 'none';
 
 //event lister | 
@@ -80,6 +82,8 @@ form.addEventListener('submit', function(e){
     var td1 = document.createElement( 'td' );
     var td2 = document.createElement( 'td' );
     var td3 = document.createElement( 'td' );
+    tr.draggable = true;
+    tr.className = 'draggable-item';
     td1.textContent = form['name-input'].value;
     td2.textContent = form['number-input'].value;
     td3.textContent = '$' + ' ' + form['ammount-input'].value;
