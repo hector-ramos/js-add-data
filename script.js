@@ -36,6 +36,7 @@ a.href = '#';
 a.className = 'add-btn';
 div.className = 'data-wrapper';
 table.className = 'data-table';
+table.id = 'data-table';
 thead.className = 't-head';
 tbody.className = 't-body';
 
@@ -70,10 +71,8 @@ for ( var i = 0; i < person.length; i++ ) {
     tbody.appendChild( tr );
 }
 
-
-// document.getElementsByTagName('div')
 var form = document.querySelector('#add-form');
-var dataTable = document.querySelector('.data-table');
+var dataTable = document.querySelector('#data-table');
 form.style.display = 'none';
 
 //event lister | 
@@ -105,3 +104,9 @@ a.addEventListener('click', function(e){
 
     e.preventDefault();
 }, false);
+
+dataTable.addEventListener('dragstart', function(e) {
+    var target = e.target;
+    
+    e.dataTransfer.setData( 'text/plain', 'test' );
+});
