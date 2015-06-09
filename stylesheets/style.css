@@ -30,27 +30,39 @@
   border-top: 1px solid transparent;
   padding: 10px;
 }
+/* line 32, ../sass/style.sass */
+.data-table .t-body tr {
+  cursor: move;
+}
+/* line 36, ../sass/style.sass */
+.data-table .t-body .draggable-item .over {
+  border: 2px dashed #000;
+}
 
-/* line 34, ../sass/style.sass */
+/* line 40, ../sass/style.sass */
 .add-btn {
   display: block;
+  margin-bottom: 20px;
   padding: 10px;
   width: 200px;
   text-align: center;
   text-decoration: none;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
   background: #B4AB8C;
   color: #fff;
   font-size: 1.4em;
+  float: right;
 }
-/* line 44, ../sass/style.sass */
+/* line 53, ../sass/style.sass */
 .add-btn:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
   opacity: 0.8;
 }
 
-/* line 47, ../sass/style.sass */
+/* line 56, ../sass/style.sass */
 .submit-btn {
   position: relative;
+  display: inline-block;
   vertical-align: top;
   width: 150px;
   padding: 10px;
@@ -60,26 +72,48 @@
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
   background: #B4AB8C;
   border: 0;
-  cursor: pointer;
   margin-top: 10px;
+  cursor: pointer;
   -moz-border-radius: 25px;
   -webkit-border-radius: 25px;
   border-radius: 25px;
 }
-/* line 63, ../sass/style.sass */
+/* line 73, ../sass/style.sass */
 .submit-btn:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
   opacity: 0.8;
 }
 
-/* line 69, ../sass/style.sass */
+/* line 76, ../sass/style.sass */
+.close-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px;
+  width: 130px;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  text-decoration: none;
+  background: #B4AB8C;
+  color: #fff;
+  font-size: 1.4em;
+  -moz-border-radius: 25px;
+  -webkit-border-radius: 25px;
+  border-radius: 25px;
+}
+/* line 90, ../sass/style.sass */
+.close-btn:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8;
+}
+
+/* line 96, ../sass/style.sass */
 label {
   display: block;
   font-size: 2em;
   color: #B4AB8C;
 }
 
-/* line 74, ../sass/style.sass */
+/* line 101, ../sass/style.sass */
 input {
   display: block;
   font-size: 1.6em;
@@ -87,7 +121,7 @@ input {
   padding: 10px;
 }
 
-/* line 80, ../sass/style.sass */
+/* line 107, ../sass/style.sass */
 .element-wrapper {
   padding: 10px 0;
 }
