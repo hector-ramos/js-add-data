@@ -6,11 +6,11 @@ var person = [
         amount: 20.01
     }, {
         name: 'Amie',
-        tel: '671-686-1563',
+        tel: '(671)686-1563',
         amount: 12.33
     }, {
         name: 'Angelo',
-        tel: '671-689-1088',
+        tel: '(671) 689-1088',
         amount: 0
     }
 ];
@@ -85,7 +85,7 @@ for ( var i = 0; i < person.length; i++ ) {
     appendData();
 }
 
-var form = document.querySelector('#add-form');
+var form = document.querySelector( '#add-form' );
 form.style.display = 'none';
 
 // Drag and Drop ::start
@@ -93,20 +93,19 @@ var dnd = function () {
     var dragElement;
 
     function dragStart (e) {
-
+        // element with attribute draggable="true" and element with className('draggable-item')
         dragElement = this;
 
-        e.dataTransfer.effectAllowed = 'move';
-        e.dataTransfer.setData( 'text/html', this.innerHTML );
+        e.dataTransfer.effectAllowed = 'move'; //allowing the target or the selected draggable-item to move
+        e.dataTransfer.setData( 'text/html', this.innerHTML ); //allowing the HTML tag and its content to be drag
     }
 
     function dragEnter(e) {
-        // this / e.target is the current hover target.
-        this.classList.add('over');
+        this.classList.add( 'over' ); //to add "over" to the class attribute of the tr with a class name ( draggable-item ) (<tr class="draggable-item over">)
     }
 
     function dragLeave(e) {
-        this.classList.remove('over');  // this / e.target is previous target element.
+        this.classList.remove( 'over' ); //remove the class name ( over ) once the target or the element being drag is move out from the dropping area.
     }
 
     function dragOver(e) {
@@ -120,17 +119,14 @@ var dnd = function () {
     }
 
     function drop(e) {
-        // this / e.target is current target element.
+        if (e.stopPropagation) { //
+            e.stopPropagation(); // to stop the current event
+        }                        //
 
-        if (e.stopPropagation) {
-            e.stopPropagation(); // stops the browser from redirecting.
-        }
-
-        // Don't do anything if dropping the same column we're dragging.
-        if (dragElement !== this) {
-            // Set the source column's HTML to the HTML of the column we dropped on.
+        // Don't do anything if dropping the same table row
+        if ( dragElement !== this ) {
             dragElement.innerHTML = this.innerHTML;
-            this.innerHTML = e.dataTransfer.getData('text/html');
+            this.innerHTML = e.dataTransfer.getData( 'text/html' );
         }
 
         return false;
@@ -139,20 +135,20 @@ var dnd = function () {
     function dragEnd(e) {
         // this/e.target is the source node.
 
-        [].forEach.call(dataTable, function (tbl) {
-            tbl.classList.remove('over');
+        Array.prototype.forEach.call(dataTable, function (tbl) {
+            tbl.classList.remove( 'over' );
         });
     }
-    
 
-    var dataTable = document.querySelectorAll('#data-table .draggable-item');
-        [].forEach.call(dataTable, function(tbl) {
-            tbl.addEventListener('dragstart', dragStart, false);
-            tbl.addEventListener('dragenter', dragEnter, false);
-            tbl.addEventListener('dragleave', dragLeave, false);
-            tbl.addEventListener('dragover', dragOver, false);
-            tbl.addEventListener('drop', drop, false);
-            tbl.addEventListener('dragend', dragEnd, false);
+    var dataTable = document.querySelectorAll( '#data-table .draggable-item' );
+
+    Array.prototype.forEach.call(dataTable, function(tbl) {
+        tbl.addEventListener('dragstart', dragStart, false);
+        tbl.addEventListener('dragenter', dragEnter, false);
+        tbl.addEventListener('dragleave', dragLeave, false);
+        tbl.addEventListener('dragover', dragOver, false);
+        tbl.addEventListener('drop', drop, false);
+        tbl.addEventListener('dragend', dragEnd, false);
     });
 }
 
@@ -161,27 +157,33 @@ dnd();
 //event lister | Add Data
 form.addEventListener('submit', function(e){
 
+    var amountInput = parseFloat( form['amount-input'].value );
+    var phoneNo = /^\(?[0-9]{3}(\-|\)) ?[0-9]{3}-[0-9]{4}$/;
+
     createTable();
 
     td1.textContent = form['name-input'].value;
     td2.textContent = form['number-input'].value;
-    td3.textContent = '$' + ' ' + form['amount-input'].value;
+    td3.textContent = '$' + ' ' + amountInput;
 
-    if ( form['amount-input'].value !== NaN ) {
+    if (td3.textContent === '$ NaN') {
         alert( "Amount is Not Valid!" );
-    } else {
+    } else if ( amountInput !== NaN && form['number-input'].value.match(phoneNo) ) {
         appendData();
         dnd();
+        form.reset();
+    } else {
+        alert( "Phone Number is Invalid!" );
     }
 
-    // form.reset();
+    // console.log(typeof amountInput);
 
     e.preventDefault();
 
 }, false);
 
-var addbtn = document.querySelector('.add-btn');
-var closebtn = document.querySelector('.close-btn');
+var addbtn = document.querySelector( '.add-btn' );
+var closebtn = document.querySelector( '.close-btn' );
 
 addbtn.addEventListener('click', function(e){
     form.style.display = 'block';
@@ -195,3 +197,13 @@ closebtn.addEventListener('click', function(e){
 // console.log(parseFloat("3.14"));
 // console.log( addbtn );
 // console.log( closebtn );
+
+
+// Resources for the DRAG and DROP EVENT
+// 1. https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Drag_and_drop
+// 2. https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Drag_operations#draggableattribute
+// 3. https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Drag_operations#drageffects
+// 4. https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer#setData.28.29
+// 5. https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Recommended_Drag_Types
+// 6. http://www.html5rocks.com/en/tutorials/dnd/basics/
+// 7. https://developer.mozilla.org/en/docs/Web/JavaScript/Guide/Regular_Expressions
