@@ -34,12 +34,12 @@
 .data-table .t-body tr {
   cursor: move;
 }
-/* line 36, ../sass/style.sass */
-.data-table .t-body .draggable-item .over {
-  border: 2px dashed #000;
+/* line 35, ../sass/style.sass */
+.data-table .t-body .draggable-item.over {
+  border: 2px dashed #eceded;
 }
 
-/* line 40, ../sass/style.sass */
+/* line 39, ../sass/style.sass */
 .add-btn {
   display: block;
   margin-bottom: 20px;
@@ -53,13 +53,13 @@
   font-size: 1.4em;
   float: right;
 }
-/* line 53, ../sass/style.sass */
+/* line 52, ../sass/style.sass */
 .add-btn:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
   opacity: 0.8;
 }
 
-/* line 56, ../sass/style.sass */
+/* line 55, ../sass/style.sass */
 .submit-btn {
   position: relative;
   display: inline-block;
@@ -78,13 +78,13 @@
   -webkit-border-radius: 25px;
   border-radius: 25px;
 }
-/* line 73, ../sass/style.sass */
+/* line 72, ../sass/style.sass */
 .submit-btn:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
   opacity: 0.8;
 }
 
-/* line 76, ../sass/style.sass */
+/* line 75, ../sass/style.sass */
 .close-btn {
   display: inline-block;
   margin-top: 10px;
@@ -100,20 +100,20 @@
   -webkit-border-radius: 25px;
   border-radius: 25px;
 }
-/* line 90, ../sass/style.sass */
+/* line 89, ../sass/style.sass */
 .close-btn:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
   opacity: 0.8;
 }
 
-/* line 96, ../sass/style.sass */
+/* line 95, ../sass/style.sass */
 label {
   display: block;
   font-size: 2em;
   color: #B4AB8C;
 }
 
-/* line 101, ../sass/style.sass */
+/* line 100, ../sass/style.sass */
 input {
   display: block;
   font-size: 1.6em;
@@ -121,7 +121,7 @@ input {
   padding: 10px;
 }
 
-/* line 107, ../sass/style.sass */
+/* line 106, ../sass/style.sass */
 .element-wrapper {
   padding: 10px 0;
 }
