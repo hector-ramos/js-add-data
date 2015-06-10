@@ -198,7 +198,6 @@ closebtn.addEventListener('click', function(e){
 // console.log( addbtn );
 // console.log( closebtn );
 
-
 // Resources for the DRAG and DROP EVENT
 // 1. https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Drag_and_drop
 // 2. https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Drag_operations#draggableattribute
